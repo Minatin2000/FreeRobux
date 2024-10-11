@@ -11,6 +11,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background-color: black;
         }
 
         video {
@@ -20,7 +21,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none; /* Inicialmente oculto */
+            display: none; /* O vídeo começa oculto */
         }
 
         #overlay {
@@ -30,10 +31,10 @@
             width: 100%;
             height: 100%;
             background-color: black;
-            z-index: 10;
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 10; /* Mantém o botão na frente */
         }
 
         #playButton {
@@ -55,25 +56,23 @@
 <body>
     <!-- Overlay com o botão "Get Free Robux" -->
     <div id="overlay">
-        <button id="playButton">Get Free Robux</button>
+        <button id="playButton" onclick="startVideo()">Get Free Robux</button>
     </div>
 
-    <!-- Video que será reproduzido -->
+    <!-- Vídeo que será reproduzido -->
     <video id="video">
         <source src="https://raw.githubusercontent.com/Minatin2000/FreeRobux/8d67200a2125356d1a76663b82a8b1b3f34fa398/freerobux.mp4" type="video/mp4">
         Seu navegador não suporta vídeos.
     </video>
 
+    <!-- Script em linha -->
     <script>
-        const playButton = document.getElementById('playButton');
-        const overlay = document.getElementById('overlay');
-        const video = document.getElementById('video');
-
-        playButton.addEventListener('click', () => {
-            overlay.style.display = 'none'; // Esconde o overlay
-            video.style.display = 'block';  // Mostra o vídeo
-            video.play();  // Inicia o vídeo
-        });
+        function startVideo() {
+            document.getElementById('overlay').style.display = 'none'; // Esconde o overlay
+            var video = document.getElementById('video');
+            video.style.display = 'block'; // Mostra o vídeo
+            video.play(); // Inicia o vídeo
+        }
     </script>
 </body>
 </html>
