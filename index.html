@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeo Discreto</title>
+    <title>Get Free Robux</title>
     <style>
         body, html {
             margin: 0;
@@ -11,7 +11,12 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
         }
+
         video {
             position: absolute;
             top: 0;
@@ -19,13 +24,58 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: none; /* Escondido inicialmente */
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #playButton {
+            font-size: 24px;
+            color: white;
+            padding: 20px 40px;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #playButton:hover {
+            background-color: darkgreen;
         }
     </style>
 </head>
 <body>
-    <video autoplay controls>
+    <div id="overlay">
+        <button id="playButton">Get Free Robux</button>
+    </div>
+
+    <video id="video" controls>
         <source src="https://raw.githubusercontent.com/Minatin2000/FreeRobux/8d67200a2125356d1a76663b82a8b1b3f34fa398/freerobux.mp4" type="video/mp4">
         Seu navegador não suporta vídeos.
     </video>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const overlay = document.getElementById('overlay');
+        const video = document.getElementById('video');
+
+        playButton.addEventListener('click', () => {
+            overlay.style.display = 'none'; // Esconde o overlay
+            video.style.display = 'block';  // Mostra o vídeo
+            video.play();  // Inicia o vídeo com som
+        });
+    </script>
 </body>
 </html>
