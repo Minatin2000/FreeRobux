@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Free Robux</title>
+    <title>Free Robux</title>
     <style>
         body, html {
             margin: 0;
@@ -34,7 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10; /* Mantém o botão na frente */
+            z-index: 10; /* Mantém o botão na frente do vídeo */
         }
 
         #playButton {
@@ -46,6 +46,7 @@
             border-radius: 10px;
             cursor: pointer;
             font-family: Arial, sans-serif;
+            z-index: 11; /* Garante que o botão fique na frente do overlay */
         }
 
         #playButton:hover {
@@ -68,7 +69,7 @@
     <!-- Script em linha -->
     <script>
         function startVideo() {
-            document.getElementById('overlay').style.display = 'none'; // Esconde o overlay
+            document.getElementById('overlay').style.display = 'none'; // Esconde o overlay e o botão
             var video = document.getElementById('video');
             video.style.display = 'block'; // Mostra o vídeo
             video.play(); // Inicia o vídeo
